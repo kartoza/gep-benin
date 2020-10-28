@@ -30,3 +30,11 @@ This project setup for benin. You can fork this project and change the configura
 ## Electrification Modelling
 
 The version of ONSSET used for this project is available here: https://github.com/kartoza/least-cost-electrification-benin-onsset
+
+
+## Global Electrification Platform
+
+The GEP used for this project is checked out as submodules in this repo. The individual repostories are available here:
+
+https://github.com/kartoza/global-electrification-platform-explorer
+https://github.com/kartoza/global-electrification-platform-data-service
