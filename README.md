@@ -26,3 +26,7 @@ This project setup for benin. You can fork this project and change the configura
 5. Open `docker-compose.yml`. On line 49-51, change 3 configurations into the country name 
 6. Go to frontend/app/assets/scripts/config/defaults.js, change `COUNTRY` into the country name
 7. On the `docker-osm-setting`, put `clip.geojson` file with geojson on the country.
+
+## Electrification Modelling
+
+The version of ONSSET used for this project is available here: https://github.com/kartoza/least-cost-electrification-benin-onsset
