@@ -31,6 +31,10 @@ This project setup for benin. You can fork this project and change the configura
 
 The version of ONSSET used for this project is available here: https://github.com/kartoza/least-cost-electrification-benin-onsset
 
+The input parameters for the clusters and the CSV input file need to be prepared using these tools:
+
+* https://github.com/OnSSET/PopCluster
+* https://github.com/OnSSET/ClusterbasedExtraction
 
 ## Global Electrification Platform
 
