@@ -1,5 +1,6 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-FROM geonode/spcgeonode:django-3.0
+ARG GEONODE_VERSION=3.0
+FROM geonode/spcgeonode:django-${GEONODE_VERSION}
 MAINTAINER Irwan Fathurrahman<irwan@kartoza.com>
 
 RUN mkdir -p /usr/share/man/man1
