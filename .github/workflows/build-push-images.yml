@@ -36,7 +36,7 @@ jobs:
         id: docker_build_geonode
         uses: docker/build-push-action@v2
         with:
-          context: deployment/docker
+          context: .
           file: deployment/docker/Dockerfile
           push: true
           tags: lucernae/gep_geonode:django-${{ matrix.geonode_version }}

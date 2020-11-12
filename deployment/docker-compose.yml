@@ -3,8 +3,10 @@ version: '3.4'
 # Common Django template for Geonode, Celery and Celerycam services below
 x-common-django:
   &default-common-django
+  image: gep-benin_django:latest
   build:
-    context: docker
+    context: ../
+    dockerfile: deployment/docker/Dockerfile
   environment:
     # editable in .env
     - HTTPS_HOST=${HTTPS_HOST}
