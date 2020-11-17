@@ -1,9 +1,8 @@
-name: stable-build
+name: latest-build
 on:
   push:
     branches:
-      - main
-      - master
+      - develop
 jobs:
   docker-builder:
     runs-on: ubuntu-latest
@@ -11,10 +10,6 @@ jobs:
       matrix:
         geonode_version:
           - "3.0"
-        gep_explorer_version:
-          - "1.1.2"
-        gep_data_service_version:
-          - "1.0.0"
     steps:
       - uses: actions/checkout@v2
       - name: Update submodules
@@ -39,7 +34,7 @@ jobs:
           context: .
           file: deployment/docker/Dockerfile
           push: true
-          tags: lucernae/gep_geonode:django-${{ matrix.geonode_version }}
+          tags: lucernae/gep_geonode:django-latest
           build-args: |
             GEONODE_VERSION=${{ matrix.geonode_version }}
       - name: Image digest
@@ -52,7 +47,7 @@ jobs:
           context: frontend
           file: frontend/Dockerfile
           push: true
-          tags: lucernae/gep_frontend:kartoza-${{ matrix.gep_explorer_version }}
+          tags: lucernae/gep_frontend:kartoza-latest
       - name: Image digest
         run: echo ${{ steps.docker_build_gep_frontend.outputs.digest }}
 
@@ -64,6 +59,6 @@ jobs:
           context: backend
           file: backend/Dockerfile
           push: true
-          tags: lucernae/gep_backend:kartoza-${{ matrix.gep_data_service_version }}
+          tags: lucernae/gep_backend:kartoza-latest
       - name: Image digest
         run: echo ${{ steps.docker_build_gep_backend.outputs.digest }}
