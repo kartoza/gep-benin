@@ -25,4 +25,4 @@ RUN ln -s /usr/local/bin/setup.sh
 COPY explorer/ /home/explorer/
 RUN setup.sh
 ENTRYPOINT ["setup.sh"]
-CMD ["yarn","serve"]
+CMD ["tail","-f","/dev/null"
