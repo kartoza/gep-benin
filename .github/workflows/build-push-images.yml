@@ -39,7 +39,7 @@ jobs:
           context: .
           file: deployment/docker/Dockerfile
           push: true
-          tags: lucernae/gep_geonode:django-${{ matrix.geonode_version }}
+          tags: ${{ secrets.DOCKERHUB_REPO }}/gep_geonode:django-${{ matrix.geonode_version }}
           build-args: |
             GEONODE_VERSION=${{ matrix.geonode_version }}
       - name: Image digest
@@ -52,7 +52,7 @@ jobs:
           context: frontend
           file: frontend/Dockerfile
           push: true
-          tags: lucernae/gep_frontend:kartoza-${{ matrix.gep_explorer_version }}
+          tags: ${{ secrets.DOCKERHUB_REPO }}/gep_frontend:kartoza-${{ matrix.gep_explorer_version }}
       - name: Image digest
         run: echo ${{ steps.docker_build_gep_frontend.outputs.digest }}
 
@@ -64,6 +64,6 @@ jobs:
           context: backend
           file: backend/Dockerfile
           push: true
-          tags: lucernae/gep_backend:kartoza-${{ matrix.gep_data_service_version }}
+          tags: ${{ secrets.DOCKERHUB_REPO }}/gep_backend:kartoza-${{ matrix.gep_data_service_version }}
       - name: Image digest
         run: echo ${{ steps.docker_build_gep_backend.outputs.digest }}
